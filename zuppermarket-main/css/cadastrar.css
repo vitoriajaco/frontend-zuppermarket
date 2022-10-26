@@ -1,0 +1,55 @@
+.cadastrar {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: strech;
+}
+
+.cadastrar__logo {
+	height: inherit;
+	padding: 50px;
+}
+.cadastrar__logo img {
+	object-fit: contain;
+	object-position: center center;
+	width: 100%;
+	height: 100%;
+}
+
+.cadastrar__form {
+	align-self: center;
+	padding: 0 50px;
+}
+
+/* CADASTRO DE ANUNCIOS */
+
+.cadastrar--anuncio {
+	grid-template-columns: 1fr;
+}
+
+@media (max-width: 720px) {
+	.cadastrar {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
+
+	.cadastrar__logo {
+		padding: 0;
+		height: 100px;
+	}
+
+	.cadastrar__logo img {
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.cadastrar__form {
+		padding: 0;
+		width: 100%;
+		max-width: 350px;
+	}
+
+	.cadastrar__form .form {
+		padding: 0;
+	}
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Zuppermarket</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__logo">
+      <img src="./img/logo.png" alt="Logo Zuppermarket" />
+    </div>
+    <nav class="header__nav">
+      <a href="#minha-conta" class="header__nav-item" title="Meus anúncios">Olá, @Fulano</a>
+      <a href="#meus-anuncios" class="header__nav-item" title="Meus anúncios">Meus anúncios</a>
+      <a href="#criar-anuncio" class="header__nav-item" title="Criar um anúncio">Criar anúncio</a>
+    </nav>
+  </header>
+  <main>
+    <section class="container cadastrar cadastrar--anuncio">
+      <div class="cadastrar__form">
+        <h2>Cadastre um anúncio</h2>
+        <form class="form form--anuncio" id="cadastroAnuncio">
+          <div class="form__group">
+            <label class="form__label" for="titulo">Título do anúncio<span>*</span></label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ex: Máquina fotográfica no precinho"
+              class="form__input" title="Digite o título do seu anuncio" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="categoria">Categoria do anúncio<span>*</span></label>
+            <select type="number" id="categoria" name="categoria" class="form__input"
+              title="Selecione a categoria do seu anúncio" required>
+              <option>Categoria 1</option>
+              <option>Categoria 2</option>
+              <option>Categoria 3</option>
+              <option>Categoria 4</option>
+            </select>
+          </div>
+          <div class="form__group form-group--full">
+            <label class="form__label" for="descricao">Descrição do anúncio<span>*</span></label>
+            <textarea id="titulo" name="titulo" placeholder="Ex: Máquina fotográfica no precinho" class="form__textarea"
+              title="Digite a descrição do seu anuncio" required></textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="valor">Valor do anúncio<span>*</span></label>
+            <input type="number" id="valor" name="valor" placeholder="Ex: R$100,00" class="form__input"
+              title="Digite o valor do seu anuncio" required>
+          </div>
+          <div class="form__group form__group--checkbox">
+            <input type="checkbox" name="negociavel" class="form__checkbox" />
+            <label for="negociavel">Valor é negociavel?</label>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="quantidade">Quantidade<span>*</span></label>
+            <input type="number" id="quantidade" name="quantidade" placeholder="Ex: 1" class="form__input"
+              title="Digite a quantidade de items do seu anúncio" required>
+          </div>
+          <div class="form__group form-group--full">
+            <button type=" submit" class="form__submit" title="Confirmar cadastro">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    &copy;Zuppermarket
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

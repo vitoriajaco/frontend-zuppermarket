@@ -1,0 +1,51 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.form__group {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.form__group--checkbox {
+	flex-direction: row;
+	align-items: center;
+}
+
+.form__label {
+	font-weight: 500;
+	font-size: 12px;
+}
+.form__input {
+	display: block;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.form__submit {
+	display: block;
+	height: 40px;
+	background: var(--corPrimaria);
+	color: #fff;
+	border: none;
+	font-weight: 500;
+	max-width: 150px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+.form__submit:hover {
+	background: var(--corSecundaria);
+}
+
+.form--anuncio {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.form--anuncio .form-group--full {
+	grid-column: span 2;
+}

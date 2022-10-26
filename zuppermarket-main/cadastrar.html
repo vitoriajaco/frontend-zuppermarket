@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Zuppermarket</title>
+</head>
+
+<body>
+  <main>
+    <section class="container cadastrar">
+      <div class="cadastrar__form">
+        <h2>Faça seu cadastro</h2>
+        <form class="form" id="cadastroUsuario">
+          <div class="form__group">
+            <label class="form__label" for="nomeCompleto">Nome Completo <span>*</span></label>
+            <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Ex: Vitória Jacó" class="form__input"
+              title="Digite seu nome completo" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="apelido">Apelido <span>*</span></label>
+            <input type="text" id="apelido" name="apelido" placeholder="Ex: Viih" class="form__input"
+              title="Digite seu apelido" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="email">E-mail <span>*</span></label>
+            <input type="email" id="email" name="email" placeholder="Ex: vitoria@zup.com.br" class="form__input"
+              title="Digite seu email" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="celular">Celular <span>*</span></label>
+            <input type="phone" id="celular" name="celular" placeholder="Ex: (87) 99999-9999" class="form__input"
+              title="Digite seu celular">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="senha">Senha <span>*</span></label>
+            <input type="password" minlenght="8" id="senha" name="senha" placeholder="Mínimo de 8 caracteres"
+              class="form__input" title="Digite uma senha de pelo menos 8 caracteres" required>
+          </div>
+          <button type=" submit" class="form__submit" title="Confirmar cadastro">Cadastrar</button>
+        </form>
+      </div>
+      <div class="cadastrar__logo">
+        <img src="img/logo.png" alt-="Logo Zuppermarket" />
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    &copy;Zuppermarket
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

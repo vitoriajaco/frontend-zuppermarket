@@ -1,0 +1,90 @@
+.anuncios {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.anuncios__filtro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 300px;
+	gap: 10px;
+	color: var(--corPrimaria);
+}
+
+.anuncios__filtro label {
+	font-weight: 600;
+	cursor: pointer;
+}
+.anuncios__filtro select {
+	display: block;
+	height: 30px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.anuncios__lista {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 50px 0;
+}
+
+.card {
+	width: 100%;
+	max-width: 300px;
+}
+
+.card__titulo,
+.card__preco {
+	text-align: center;
+	display: block;
+	height: 40px;
+}
+.card__preco {
+	height: 20px;
+}
+
+.card__imagem {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.card__imagem img {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+}
+
+.card__description {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.card__autor {
+	display: block;
+	text-align: center;
+	font-weight: 600;
+}
+
+.card__detalhes {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	background: var(--corDetalhes);
+	color: var(--corPrimaria--dark);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	margin: 10px 0;
+}
+.card__detalhes:hover {
+	background: var(--corSecundaria);
+	color: #fff;
+	transition: background 0.3s;
+}
