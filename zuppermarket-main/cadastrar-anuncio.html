@@ -37,10 +37,17 @@
             <label class="form__label" for="categoria">Categoria do anúncio<span>*</span></label>
             <select type="number" id="categoria" name="categoria" class="form__input"
               title="Selecione a categoria do seu anúncio" required>
-              <option>Categoria 1</option>
-              <option>Categoria 2</option>
-              <option>Categoria 3</option>
-              <option>Categoria 4</option>
+              <option>Todos</option>
+              <option>Tecnologia</option>
+              <option>Servicos</option>
+              <option>Ingressos</option>
+              <option>Moveis</option>
+              <option>Veiculos</option>
+              <option>Games</option>
+              <option>Eletrodomesticos</option>
+              <option>Esporte</option>
+              <option>Outros</option>
+              
             </select>
           </div>
           <div class="form__group form-group--full">
@@ -62,6 +69,27 @@
             <input type="number" id="quantidade" name="quantidade" placeholder="Ex: 1" class="form__input"
               title="Digite a quantidade de items do seu anúncio" required>
           </div>
+          <div class="form__group">
+            <label class="form__label" for="cidade">Cidade<span>*</span></label>
+            <textarea id="cidade" name="Cidade" placeholder="Ex: Recife" class="form__textarea"
+              title="Digite a sua cidade" required></textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="estado">Estado<span>*</span></label>
+            <textarea id="estado" name="Estado" placeholder="Ex: Pernambuco" class="form__textarea"
+              title="Digite o seu Estado" required></textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="urlFoto">URL Foto<span>*</span></label>
+            <textarea id="urlFoto" name="urlFoto" placeholder="Copie aqui o URL da foto" class="form__textarea"
+              title="Cole aqui o Url da foto" required></textarea>
+          </div>
+          <div class="form__group form-group--full">
+            <label class="form__label" for="descricaoDaFoto">Descrição da foto<span>*</span></label>
+            <textarea id="descricaoDaFoto" name="descricaoDaFoto" placeholder="Ex: Foto de um iphone 11 prata com alguns arranhões na lateral" class="form__textarea"
+              title="Digite a descrição da sua foto" required></textarea>
+          </div>
+          
           <div class="form__group form-group--full">
             <button type=" submit" class="form__submit" title="Confirmar cadastro">Cadastrar</button>
           </div>
