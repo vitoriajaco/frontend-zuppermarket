@@ -29,40 +29,62 @@
         <h2>Cadastre um anúncio</h2>
         <form class="form form--anuncio" id="cadastroAnuncio">
           <div class="form__group">
-            <label class="form__label" for="titulo">Título do anúncio<span>*</span></label>
-            <input type="text" id="titulo" name="titulo" placeholder="Ex: Máquina fotográfica no precinho"
+            <label class="form__label" for="nomeDoTitulo">Título do anúncio<span>*</span></label>
+            <input type="text" id="nomeDoTitulo" name="nomeDoTitulo" placeholder="Ex: Máquina fotográfica no precinho"
               class="form__input" title="Digite o título do seu anuncio" required>
           </div>
           <div class="form__group">
             <label class="form__label" for="categoria">Categoria do anúncio<span>*</span></label>
             <select type="number" id="categoria" name="categoria" class="form__input"
               title="Selecione a categoria do seu anúncio" required>
-              <option>Todos</option>
-              <option>Tecnologia</option>
-              <option>Servicos</option>
-              <option>Ingressos</option>
-              <option>Moveis</option>
-              <option>Veiculos</option>
-              <option>Games</option>
-              <option>Eletrodomesticos</option>
-              <option>Esporte</option>
-              <option>Outros</option>
+              <option value="TECNOLOGIA">Tecnologia</option>
+              <option value="SERVICOS">Servicos</option>
+              <option value="INGRESSOS">Ingressos</option>
+              <option value="MOVEIS">Moveis</option>
+              <option value="VEICULOS">Veiculos</option>
+              <option value="GAMES">Games</option>
+              <option value="ELETRODOMESTICOS">Eletrodomesticos</option>
+              <option value="ESPORTE">Esporte</option>
+              <option value="OUTROS">Outros</option>
               
             </select>
           </div>
           <div class="form__group form-group--full">
             <label class="form__label" for="descricao">Descrição do anúncio<span>*</span></label>
-            <textarea id="titulo" name="titulo" placeholder="Ex: Máquina fotográfica no precinho" class="form__textarea"
-              title="Digite a descrição do seu anuncio" required></textarea>
+            <textarea
+              id="descricao"
+              name="descricao"
+              placeholder="Ex: Máquina fotográfica no precinho"
+              class="form__textarea"
+              title="Digite a descrição do seu anuncio"
+              required
+            ></textarea>
           </div>
           <div class="form__group">
             <label class="form__label" for="valor">Valor do anúncio<span>*</span></label>
             <input type="number" id="valor" name="valor" placeholder="Ex: R$100,00" class="form__input"
               title="Digite o valor do seu anuncio" required>
           </div>
+          <div class="form__group">
+            <label class="form__label" for="entrega">
+              Tipo de Entrega<span>*</span>
+            </label>
+            <select
+              type="number"
+              id="entrega"
+              name="entrega"
+              class="form__input"
+              title="Selecione o tipo de entrega"
+              required
+            >
+              <option value="ENVIOPOREMAIL">Envio por E-mail</option>
+              <option value="TRANSPORTADORA">Transportadora</option>
+              <option value="RETIRADANOLOCAL">Retirada no Local</option>
+            </select>
+          </div>
           <div class="form__group form__group--checkbox">
-            <input type="checkbox" name="negociavel" class="form__checkbox" />
-            <label for="negociavel">Valor é negociavel?</label>
+            <input type="checkbox" name="seNegociavel" class="form__checkbox" value="true" />
+            <label for="seNegociavel">Valor é negociavel?</label>
           </div>
           <div class="form__group">
             <label class="form__label" for="quantidade">Quantidade<span>*</span></label>
@@ -71,28 +93,29 @@
           </div>
           <div class="form__group">
             <label class="form__label" for="cidade">Cidade<span>*</span></label>
-            <textarea id="cidade" name="Cidade" placeholder="Ex: Recife" class="form__textarea"
+            <textarea id="cidade" name="cidade" placeholder="Ex: Recife" class="form__textarea"
               title="Digite a sua cidade" required></textarea>
           </div>
           <div class="form__group">
             <label class="form__label" for="estado">Estado<span>*</span></label>
-            <textarea id="estado" name="Estado" placeholder="Ex: Pernambuco" class="form__textarea"
+            <textarea id="estado" name="estado" placeholder="Ex: Pernambuco" class="form__textarea"
               title="Digite o seu Estado" required></textarea>
-          </div>
-          <div class="form__group">
+          </div> 
+          <div class="form__group form-group--full">
             <label class="form__label" for="urlFoto">URL Foto<span>*</span></label>
-            <textarea id="urlFoto" name="urlFoto" placeholder="Copie aqui o URL da foto" class="form__textarea"
-              title="Cole aqui o Url da foto" required></textarea>
+            <input type="text" id="urlFoto" name="urlFoto" placeholder="Copie aqui o URL da foto" class="form__input"
+              title="Cole aqui o Url da foto" required>
           </div>
           <div class="form__group form-group--full">
-            <label class="form__label" for="descricaoDaFoto">Descrição da foto<span>*</span></label>
-            <textarea id="descricaoDaFoto" name="descricaoDaFoto" placeholder="Ex: Foto de um iphone 11 prata com alguns arranhões na lateral" class="form__textarea"
+            <label class="form__label" for="descricaoFoto">Descrição da foto<span>*</span></label>
+            <textarea id="descricaoFoto" name="descricaoFoto" placeholder="Ex: Foto de um iphone 11 prata com alguns arranhões na lateral" class="form__input form__input--textarea"
               title="Digite a descrição da sua foto" required></textarea>
           </div>
           
           <div class="form__group form-group--full">
             <button type=" submit" class="form__submit" title="Confirmar cadastro">Cadastrar</button>
           </div>
+          <div class="form__message form-group--full"></div>
         </form>
       </div>
     </section>
@@ -100,7 +123,7 @@
   <footer class="footer">
     &copy;Zuppermarket
   </footer>
-  <script src="js/app.js"></script>
+  <script src="js/anuncio.js"></script>
 </body>
 
 </html>

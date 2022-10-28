@@ -25,6 +25,11 @@
 	height: 30px;
 	padding-left: 10px;
 }
+.form__input--textarea{
+	height: 85px;
+	padding-top: 5px;
+	resize: none;
+}
 
 .form__submit {
 	display: block;
@@ -48,4 +53,21 @@
 
 .form--anuncio .form-group--full {
 	grid-column: span 2;
+}
+
+.form__message{
+	display: block;
+	text-align: center;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.form__message--sucesso{
+	color: #fff;
+	background: teal;
+}
+
+.form__message--erro{
+	color: #fff;
+	background: tomato;
 }

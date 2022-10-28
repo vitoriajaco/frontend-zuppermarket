@@ -25,39 +25,38 @@
   </header>
   <main>
     <section class="container anuncios">
-      <div class="anuncios__filtro">
-        <label for="filtro">
-          Navegue por categorias
-        </label>
-        <select id="filtro" name="filtro">
-          <option value="todos">Todos</option>
-          <option value="tecnologia">Tecnologia</option>
-          <option value="servicos">Serviços</option>
-        </select>
+      <div class="anuncios__filtros">
+        <div class="filtro">
+          <label for="categoria">
+            Navegue por categorias
+          </label>
+          <select id="categoria" name="categoria" onChange="listarAnuncios()">
+            <option value="">SELECIONE UMA CATEGORIA</option>
+            <option value="TODOS">Todos</option>
+            <option value="TECNOLOGIA" selected>Tecnologia</option>
+            <option value="SERVICOS">Servicos</option>
+            <option value="INGRESSOS">Ingressos</option>
+            <option value="MOVEIS">Moveis</option>
+            <option value="VEICULOS">Veiculos</option>
+            <option value="GAMES">Games</option>
+            <option value="ELETRODOMESTICOS">Eletrodomesticos</option>
+            <option value="ESPORTE">Esporte</option>
+            <option value="OUTROS">Outros</option>
+          </select>
+        </div>
+        <div class="filtro">
+          <label for="status">
+            Navegue por Status
+          </label>
+          <select id="status" name="status" onChange="listarAnuncios()">
+            <option value="">SELECIONE UM STATUS</option>
+            <option value="DISPONIVEL" selected>Disponivel</option>
+            <option value="ENCERRADO">Encerrado</option>
+          </select>
+        </div>
       </div>
       <div class="anuncios__lista">
-        <article class="card">
-          <strong class="card__titulo">
-            iPhone 11 64gb
-          </strong>
-          <span class="card__preco">
-            R$ 1200,00
-          </span>
-          <div class="card__imagem">
-            <img src="https://picsum.photos/400" />
-          </div>
-          <p class="card__description">
-            Aenean auctor magna a tincidunt aliquet. Cras placerat placerat metus sed consequat. Nam lacinia augue at
-            fringilla placerat. Cras placerat, lacus eu efficitur volutpat, nibh mi sollicitudin lorem, non convallis
-            elit urna a nibh.
-          </p>
-          <span class="card__autor">
-            Danilo Oliveira
-          </span>
-          <a href="#" class="card__detalhes">
-            Ver mais detalhes
-          </a>
-        </article>
+        
         <article class="card">
           <strong class="card__titulo">
             iPhone 11 64gb
@@ -131,6 +130,10 @@
     &copy;Zuppermarket
   </footer>
   <script src="js/app.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', listarAnuncios)
+    //Quando a página terminar de carregar (DOMContentLoaded), executa a função ListarAnuncios
+  </script>
 </body>
 
 </html>
