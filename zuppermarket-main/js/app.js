@@ -32,7 +32,7 @@ async function listarAnuncios(){
         ${anuncio.descricao}
       </p>
       <span class="card__autor">
-        Danilo Oliveira
+        ${anuncio.usuario.apelido}
       </span>
       <a href="#" class="card__detalhes">
         Ver mais detalhes
