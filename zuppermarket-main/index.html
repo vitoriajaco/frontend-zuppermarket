@@ -14,13 +14,13 @@
 
 <body>
   <header class="header">
-    <div class="header__logo">
+    <a href="/" class="header__logo">
       <img src="./img/logo.png" alt="Logo Zuppermarket" />
-    </div>
+    </a>
     <nav class="header__nav">
       <a href="#minha-conta" class="header__nav-item" title="Meus anúncios">Olá, @Fulano</a>
       <a href="#meus-anuncios" class="header__nav-item" title="Meus anúncios">Meus anúncios</a>
-      <a href="#criar-anuncio" class="header__nav-item" title="Criar um anúncio">Criar anúncio</a>
+      <a href="cadastrar-anuncio.html" class="header__nav-item" title="Criar um anúncio">Criar anúncio</a>
     </nav>
   </header>
   <main>
@@ -31,9 +31,8 @@
             Navegue por categorias
           </label>
           <select id="categoria" name="categoria" onChange="listarAnuncios()">
-            <option value="">SELECIONE UMA CATEGORIA</option>
-            <option value="TODOS">Todos</option>
-            <option value="TECNOLOGIA" selected>Tecnologia</option>
+            <option value="">Todos</option>
+            <option value="TECNOLOGIA">Tecnologia</option>
             <option value="SERVICOS">Servicos</option>
             <option value="INGRESSOS">Ingressos</option>
             <option value="MOVEIS">Moveis</option>
@@ -49,81 +48,12 @@
             Navegue por Status
           </label>
           <select id="status" name="status" onChange="listarAnuncios()">
-            <option value="">SELECIONE UM STATUS</option>
             <option value="DISPONIVEL" selected>Disponivel</option>
             <option value="ENCERRADO">Encerrado</option>
           </select>
         </div>
       </div>
-      <div class="anuncios__lista">
-        
-        <article class="card">
-          <strong class="card__titulo">
-            iPhone 11 64gb
-          </strong>
-          <span class="card__preco">
-            R$ 1200,00
-          </span>
-          <div class="card__imagem">
-            <img src="https://picsum.photos/400" />
-          </div>
-          <p class="card__description">
-            Aenean auctor magna a tincidunt aliquet. Cras placerat placerat metus sed consequat. Nam lacinia augue at
-            fringilla placerat. Cras placerat, lacus eu efficitur volutpat, nibh mi sollicitudin lorem, non convallis
-            elit urna a nibh.
-          </p>
-          <span class="card__autor">
-            Danilo Oliveira
-          </span>
-          <a href="#" class="card__detalhes">
-            Ver mais detalhes
-          </a>
-        </article>
-        <article class="card">
-          <strong class="card__titulo">
-            iPhone 11 64gb
-          </strong>
-          <span class="card__preco">
-            R$ 1200,00
-          </span>
-          <div class="card__imagem">
-            <img src="https://picsum.photos/400" />
-          </div>
-          <p class="card__description">
-            Aenean auctor magna a tincidunt aliquet. Cras placerat placerat metus sed consequat. Nam lacinia augue at
-            fringilla placerat. Cras placerat, lacus eu efficitur volutpat, nibh mi sollicitudin lorem, non convallis
-            elit urna a nibh.
-          </p>
-          <span class="card__autor">
-            Danilo Oliveira
-          </span>
-          <a href="#" class="card__detalhes">
-            Ver mais detalhes
-          </a>
-        </article>
-        <article class="card">
-          <strong class="card__titulo">
-            iPhone 11 64gb
-          </strong>
-          <span class="card__preco">
-            R$ 1200,00
-          </span>
-          <div class="card__imagem">
-            <img src="https://picsum.photos/400" />
-          </div>
-          <p class="card__description">
-            Aenean auctor magna a tincidunt aliquet. Cras placerat placerat metus sed consequat. Nam lacinia augue at
-            fringilla placerat. Cras placerat, lacus eu efficitur volutpat, nibh mi sollicitudin lorem, non convallis
-            elit urna a nibh.
-          </p>
-          <span class="card__autor">
-            Danilo Oliveira
-          </span>
-          <a href="#" class="card__detalhes">
-            Ver mais detalhes
-          </a>
-        </article>
-      </div>
+      <div class="anuncios__lista"></div>
     </section>
   </main>
   <footer class="footer">

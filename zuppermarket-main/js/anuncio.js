@@ -1,48 +1,59 @@
-const form = document.getElementById("cadastroAnuncio")
 
-form.addEventListener('submit', event => { // ouvir até o submit ser acionado
-    event.preventDefault();
+const SERVER = 'http://localhost:8080';
 
-    const message = document.querySelector('.form__message');
-    message.innerText = '';
-    const btnSubmit = document.querySelector('.form__submit');
-    btnSubmit.setAttribute('disabled', true);
-    btnSubmit.innerText = 'Cadastrando...';
+async function detalhesAnuncio(){
 
-    const formData = new FormData(form); // Pega o formulário e java em uma variável 
-    const data = Object.fromEntries(formData); // Se torna em objeto 
+  let anuncio = null;
 
-    data.seNegociavel = document.querySelector('input[name="seNegociavel"]').checked;
-    data.quantidade = Number(data.quantidade)
-    data.valor = Number(data.valor)
-    data.usuarioId = 1;
-    console.log(data);
+  const detalhesAnuncio = document.querySelector('.anuncio');
+  
+  anuncio = await buscarAnuncio();
+  
+    const card = `
+      <div class="anuncio__imagem">
+        ${anuncio.urlFoto != "" ? (
+            `<img src="${anuncio.urlFoto}" alt="${anuncio.descricaoFoto}"/>`
+          )
+          :
+          (
+            `<img src="../img/empty.png" alt="${anuncio.nomeDoTitulo}"/>`
+          )
+        }
+      </div>
+      <div class="anuncio__detalhes">
+        <strong class="anuncio__titulo">
+            ${anuncio.nomeDoTitulo}
+        </strong>
+        <span class="anuncio__preco">
+            ${anuncio.valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
+        </span>
+        <span class="anuncio__autor">
+            Anunciante: <strong>${anuncio.usuario.apelido}</strong>
+        </span>
+        <span class="anuncio__celular">
+            ${anuncio.usuario.celular}
+        </span>
+        <span class="anuncio__descricao">
+         ${anuncio.descricao}
+        </span>
 
-    fetch("http://localhost:8080/anuncios", {
-        method: 'POST',
-        headers: {
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then((res) => {
-      console.log('Resposta: ', res);
-      if(res.ok){
-        message.classList.remove('form__message--erro');
-        message.classList.add('form__message--sucesso');
-        message.innerText = 'Anúncio cadastrado com sucesso.'
-      }
-      return res.json()
-    })
-    .then((data) => {
-      if(data.status === 500){
-        message.classList.remove('form__message--sucesso');
-        message.classList.add('form__message--erro');
-        message.innerText = data.message;
-      }
-    })
-    .finally(() => {
-      btnSubmit.removeAttribute('disabled');
-      btnSubmit.innerText = 'Cadastrar';
-    })
-});
+        <a href="tel:${anuncio.usuario.celular}" class="anuncio__botao">
+            Falar com anunciante
+        </a>
+      
+      </div>`;
+
+    detalhesAnuncio.innerHTML = card;
+}
+
+async function buscarAnuncio() {
+    //https://www.sitepoint.com/get-url-parameters-with-javascript/
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
+    console.log("ID: ", id);
+
+    const data = await fetch(`${SERVER}/anuncios/${id}`);
+    const json = await data.json();
+    return json;
+}

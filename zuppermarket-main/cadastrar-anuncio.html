@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -14,26 +14,31 @@
 
 <body>
   <header class="header">
-    <div class="header__logo">
+    <a href="/" class="header__logo">
       <img src="./img/logo.png" alt="Logo Zuppermarket" />
-    </div>
+    </a>
     <nav class="header__nav">
       <a href="#minha-conta" class="header__nav-item" title="Meus anúncios">Olá, @Fulano</a>
       <a href="#meus-anuncios" class="header__nav-item" title="Meus anúncios">Meus anúncios</a>
-      <a href="#criar-anuncio" class="header__nav-item" title="Criar um anúncio">Criar anúncio</a>
+      <a href="#" class="header__nav-item" title="Criar um anúncio">Criar anúncio</a>
     </nav>
   </header>
   <main>
     <section class="container cadastrar cadastrar--anuncio">
       <div class="cadastrar__form">
         <h2>Cadastre um anúncio</h2>
-        <form class="form form--anuncio" id="cadastroAnuncio">
+        <form class="form form__anuncio" id="cadastroAnuncio">
           <div class="form__group">
             <label class="form__label" for="nomeDoTitulo">Título do anúncio<span>*</span></label>
             <input type="text" id="nomeDoTitulo" name="nomeDoTitulo" placeholder="Ex: Máquina fotográfica no precinho"
               class="form__input" title="Digite o título do seu anuncio" required>
           </div>
           <div class="form__group">
+            <label class="form__label" for="usuarioId">ID do Usuário<span>*</span></label>
+            <input type="number" id="usuarioId" name="usuarioId" placeholder="Ex: ID do usuário"
+              class="form__input" title="ID do Usuário" required>
+          </div>
+          <div class="form__group form__group--full">
             <label class="form__label" for="categoria">Categoria do anúncio<span>*</span></label>
             <select type="number" id="categoria" name="categoria" class="form__input"
               title="Selecione a categoria do seu anúncio" required>
@@ -49,13 +54,13 @@
               
             </select>
           </div>
-          <div class="form__group form-group--full">
+          <div class="form__group form__group--full">
             <label class="form__label" for="descricao">Descrição do anúncio<span>*</span></label>
             <textarea
               id="descricao"
               name="descricao"
               placeholder="Ex: Máquina fotográfica no precinho"
-              class="form__textarea"
+              class="form__input--textarea"
               title="Digite a descrição do seu anuncio"
               required
             ></textarea>
@@ -93,29 +98,58 @@
           </div>
           <div class="form__group">
             <label class="form__label" for="cidade">Cidade<span>*</span></label>
-            <textarea id="cidade" name="cidade" placeholder="Ex: Recife" class="form__textarea"
-              title="Digite a sua cidade" required></textarea>
+            <input id="cidade" name="cidade" placeholder="Ex: Recife" class="form__input"
+              title="Digite a sua cidade" required />
           </div>
           <div class="form__group">
             <label class="form__label" for="estado">Estado<span>*</span></label>
-            <textarea id="estado" name="estado" placeholder="Ex: Pernambuco" class="form__textarea"
-              title="Digite o seu Estado" required></textarea>
+            <select id="estado" name="estado" title="Selecione um estado" class="form__input" required>
+              <option value="">SELECIONE UM ESTADO</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+              <option value="EX">Estrangeiro</option>
+            </select>
           </div> 
-          <div class="form__group form-group--full">
-            <label class="form__label" for="urlFoto">URL Foto<span>*</span></label>
+          <div class="form__group form__group--full">
+            <label class="form__label" for="urlFoto">URL Foto</label>
             <input type="text" id="urlFoto" name="urlFoto" placeholder="Copie aqui o URL da foto" class="form__input"
-              title="Cole aqui o Url da foto" required>
+              title="Cole aqui o Url da foto">
           </div>
-          <div class="form__group form-group--full">
-            <label class="form__label" for="descricaoFoto">Descrição da foto<span>*</span></label>
+          <div class="form__group form__group--full">
+            <label class="form__label" for="descricaoFoto">Descrição da foto</label>
             <textarea id="descricaoFoto" name="descricaoFoto" placeholder="Ex: Foto de um iphone 11 prata com alguns arranhões na lateral" class="form__input form__input--textarea"
-              title="Digite a descrição da sua foto" required></textarea>
+              title="Digite a descrição da sua foto"></textarea>
           </div>
           
-          <div class="form__group form-group--full">
+          <div class="form__group form__group--full">
             <button type=" submit" class="form__submit" title="Confirmar cadastro">Cadastrar</button>
           </div>
-          <div class="form__message form-group--full"></div>
+          <div class="form__message form__group--full"></div>
         </form>
       </div>
     </section>
@@ -123,7 +157,7 @@
   <footer class="footer">
     &copy;Zuppermarket
   </footer>
-  <script src="js/anuncio.js"></script>
+  <script src="js/cadastrar-anuncio.js"></script>
 </body>
 
 </html>

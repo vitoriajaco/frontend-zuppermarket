@@ -11,6 +11,11 @@
 	flex-direction: column;
 	gap: 5px;
 }
+
+.form__group--full {
+	grid-column: span 2;
+}
+
 .form__group--checkbox {
 	flex-direction: row;
 	align-items: center;
@@ -46,13 +51,9 @@
 	background: var(--corSecundaria);
 }
 
-.form--anuncio {
+.form__anuncio {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-.form--anuncio .form-group--full {
-	grid-column: span 2;
 }
 
 .form__message{

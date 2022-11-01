@@ -5,10 +5,14 @@
 	--corDetalhes: #8dc63f;
 }
 
+*{
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	padding: 0;
-	max-width: 100vw;
+	max-width: 100%;
 	overflow-x: hidden;
 	font-family: "Montserrat", sans-serif;
 	font-size: 100%;
@@ -16,6 +20,9 @@ body {
 
 .container {
 	min-height: calc(100vh - 130px);
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .header {
@@ -54,4 +61,11 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media (max-width: 1000px){
+	.container{
+		max-width: 100%;
+		padding: 0 10px;
+	}
 }

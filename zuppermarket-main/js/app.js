@@ -5,18 +5,14 @@ async function listarAnuncios(){
 
   let anuncios = null;
 
-  const categoria = document.getElementById('categoria').value;
-  console.log(categoria)
-
-  const status = document.getElementById('status').value;
-  console.log(status)
-
   const listaAnuncios = document.querySelector('.anuncios__lista');
-  
+  listaAnuncios.innerHTML = '';
+
   anuncios = await buscarAnuncios();
   
+  console.log('Anuncios: ', anuncios);
+
   anuncios.forEach(anuncio => {
-    console.log(anuncio)
     const card = `
     <article class="card">
       <strong class="card__titulo">
@@ -25,26 +21,35 @@ async function listarAnuncios(){
       <span class="card__preco">
         ${anuncio.valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
       </span>
-      <div class="card__imagem">
-        <img src="https://picsum.photos/400" alt="${anuncio.descricaoFoto}"/>
+      <a href="/anuncio.html?id=${anuncio.id}" class="card__imagem">
+        ${anuncio.urlFoto != "" ? (
+            `<img src="${anuncio.urlFoto}" alt="${anuncio.descricaoFoto}"/>`
+          )
+          :
+          (
+            `<img src="../img/empty.png" alt="${anuncio.nomeDoTitulo}"/>`
+          )
+        }
       </div>
-      <p class="card__description">
-        ${anuncio.descricao}
-      </p>
       <span class="card__autor">
         ${anuncio.usuario.apelido}
       </span>
-      <a href="#" class="card__detalhes">
+      <a href="/anuncio.html?id=${anuncio.id}" class="card__detalhes">
         Ver mais detalhes
       </a>
     </article>`;
     listaAnuncios.innerHTML += card;
   });
-
 }
 
 async function buscarAnuncios() {
-  const data = await fetch(`${SERVER}/anuncios`);
+  
+  const categoria = document.getElementById('categoria').value ? document.getElementById('categoria').value : '';
+  console.log('Categoria: ', categoria)
+  const status = document.getElementById('status').value ? document.getElementById('status').value : '';
+  console.log('Status: ', status)
+
+  const data = await fetch(`${SERVER}/anuncios?categoria=${categoria}&status=${status}`);
   const json = await data.json();
   return json;
 }
